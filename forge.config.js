@@ -1,7 +1,8 @@
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon: 'assets/icon' 
+    icon: 'assets/icon',
+    appBundleId: 'whatsapp2'
   },
   rebuildConfig: {},
   makers: [

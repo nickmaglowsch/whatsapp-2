@@ -24,7 +24,8 @@ jobs:
       - name: Increment version
         id: increment_version
         run: |
-          echo "::set-output name=new_version::$(npm version patch --prefix $GITHUB_WORKSPACE)"
+          npm --no-git-tag-version version patch --prefix $GITHUB_WORKSPACE
+          echo "::set-output name=new_version::$(node -p -e "require('./package.json').version")"
 
       - name: Build application
         run: npm run make
